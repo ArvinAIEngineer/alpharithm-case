@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 # --- KNOWLEDGE BASE ---
 # This is the information the AI will use to answer questions.
+# CORRECTED: Now includes all case studies provided.
 KNOWLEDGE_BASE = """
 Alpharithm Technologies – Case Studies
 
@@ -115,6 +116,12 @@ Benefits:
 - Timely reporting across business lines
 - Improved operational efficiency and automation
 Technology: IBM Information Server, IBM Netezza, HortonWorks, Tableau, AWS Redshift, AWS S3, AWS DynamoDB
+
+Netezza Migration – Retail Client
+Benefits:
+- Timely reporting across business lines
+- Improved automation and operational efficiency
+Technology: IBM Netezza
 """
 
 # --- PROMPT ENGINEERING ---
