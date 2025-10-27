@@ -9,119 +9,347 @@ from dotenv import load_dotenv
 KNOWLEDGE_BASE = """
 Alpharithm Technologies – Case Studies
 
-Financial Services & Banking
+# Banking - Enterprise Data Warehouse and Analytics
 
-Central Bank of India – Enterprise Data Warehouse and Analytics
-About the client: Central Bank of India, established in 1911, was the first Indian commercial bank wholly owned and managed by Indians.
-Business Challenges: The client needed better insights from customer data. Existing reports built on an ODS did not cover all requirements. Daily KPI monitoring and statutory report preparation were time-consuming and often inaccurate.
-Solution: Implemented an IBM IIAS appliance with data from 17+ applications using IBM InfoSphere Information Server. IBM CDC connected Core Banking Applications to Staging areas. Cognos was used for Reporting and Predictive Analytics. 12 Data Marts and 76 Dashboards were created. Data Dictionary and lineage ensured trust in analytics.
-Benefits:
-- KPI dashboards for day-to-day monitoring
-- Improved governance and trust in IT systems
-- Easier generation of regulatory reports
-- Enhanced Customer 360 View for targeted analytics
-Technology: IBM Information Server, IBM Db2 Warehouse, IBM IIAS, IBM CDC, IBM Cognos, Oracle, SQL Server
+&lt;img&gt;alpharithm logo&lt;/img&gt;
 
-ICICI Bank – Master Data Management & Data Governance
-About the client: ICICI Bank, one of the largest private banks in India.
-Business Challenges: Customer information was fragmented across retail and corporate applications, leading to duplicate records and inconsistent offers.
-Solution: Integrated data from 70+ applications into IBM MDM. Data standardized, cleansed, and probabilistic matching applied to identify duplicates. Golden records made available via REST API through APIGEE middleware.
-Benefits:
-- Unique customer identification across business lines
-- Improved customer experience with Golden Profile
-- Centralized consent management
-- Advanced householding for accurate customer scoring
-Technology: MDM AE on OpenShift, IBM Cloud Pack Cartridge Information Server, IBM Watson Knowledge Catalog, IBM Consent Management, IBM Reference Data Management, APIGEE Middleware, Vertica, Oracle EXADATA, Oracle, SQL Server
+**About the client:** Central Bank of India is a leading bank which was established in 1911, Central Bank of India was the first Indian commercial bank which was wholly owned and managed by Indians.
 
-DHFL – Master Data Management
-About the client: DHFL is the 3rd largest mortgage lender in India.
-Business Challenges: Data migration from legacy systems to modern ERP/CRM applications had poor master data quality.
-Solution: Data migrated to MDM Cloud on SoftLayer, standardized, cleansed, and loaded into MDM hub. Deduplication algorithms created unique enterprise IDs mapped to transaction data for ERP/CRM migration.
-Benefits:
-- Single view of customer created within 2 months
-- Reduced overall cost with cloud-based subscription
-- Improved marketing effectiveness
-- Increased up-sell/cross-sell opportunities
-Technology: MDM AE on IBM SoftLayer Cloud, IBM Datastage, IBM QualityStage
+**Business Challenges:** The client wanted to gain better insights from their customer data. setup a comprehensive data warehousing platform to enable publishing standard KPI’s on Dashboards and perform Analytics. Existing reports were built on top of an ODS and did not cover all the data requirements. Daily KPI’s monitoring and preparation of statutory reports were time consuming and many times inaccurate. Bank then decided to implement a comprehensive Datawarehouse for their reporting and analytical needs
 
-Ujjivan – Microfinance ODS
-About the client: Leading microfinance company, recently awarded Small Bank license by RBI.
-Business Challenges: Multiple legacy systems and complex IT infrastructure made timely insights difficult.
-Solution: IBM InfoSphere connected to various databases, captured changes at source, performed ETL, and populated Data Mart. Cognos and SPSS enabled reporting and predictive analytics.
-Benefits:
-- ETL processing reduced from 16 to 4 hours
-- Improved governance and trust
-- Increased productivity and insights
-- Future-proof integration with new tools and capabilities
-Technology: IBM Information Server, IBM Datastage, IBM QualityStage, IGC
+**Solution:** The proposed solution consisted of IBM IIAS appliance into which data was extracted from 17+ applications using IBM InfoSphere Information Server. IBM CDC was implemented between the Core Banking Application and Staging areas. Jobs were designed to meet business defined SLAs. Cognos was used for Reporting and Predictive analytics. Approximately 12 Data Marts and 76 Dashboards were created. The Data Dictionary and Data lineage options were recommended to enable the business user to track the journey of data from reports all the way to the source systems, thereby increasing the trust in Analytics.
 
-SBI Card – Financial Services Data Lake
-About the client: Leading payment solutions provider in India.
-Business Challenges: Data acquisition from mainframes (Z/OS) and multiple satellite applications was challenging.
-Solution: IBM CDC extracted changed data from mainframes and Oracle, posted to Kafka and Cloudera. IBM BigIntegrate processed data for BI and analytics. Governance catalog tracked technical assets.
-Benefits:
-- Real-time visibility into source systems
-- End-to-end automation of data processing
-- Streamlined operational reporting
-- Supported downstream analytics and model building
-Technology: IBM CDC, IBM BigIntegrate, Cloudera, Kafka, Oracle
+**Benefits:**
+*   Improved Monitoring of Business: KPI based dashboards allowing day to day monitoring of critical KPI’s
+*   Improved Governance and Trust: Significantly increased the process and trust that the users had in the IT systems and Data.
+*   Regulatory Reports generation: Improved ease of generation of reports based on regulatory demands (Standard and Ad-hoc)
+*   Improved Customer 360 View – Comprehensive data of customer and transactions has increased the quality of Analytics, allowing for better targeting of customers
 
-Insurance
+**Technology:** IBM Information Server ( Datastage and QualityStage), IBM Db2 Warehouse, IBM IIAS, IBM Change Data Capture, Information Governance Catalog / Glossary (IGC), IBM Cognos, Oracle, SQL Server
 
-Universal Sompo – Data Lake, Analytics & Integration
-About the client: Mid-market general insurance company providing Health, Motor, and Commercial Insurance.
-Business Challenges: Siloed applications, manual reporting, duplicate customer records, Salesforce implementation across functions.
-Solution: Centralized data from 30+ applications into Data Lake. IBM CDC and Datastage implemented. Alpharithm SiNGL created unique customer repository. Data integrated with Salesforce and visualized with Tableau.
-Benefits:
-- Near real-time visibility of customer data
-- Improved customer support
-- Easier operational reporting
-- KPI-based performance monitoring
-Technology: IBM CDC, IBM Datastage, IBM QualityStage, SiNGL (MDM), IBM Db2 Warehouse, Oracle, SQL Server, MySQL
+&lt;img&gt;Central Bank of India logo with text "सेन्ट्रल बैंक ऑफ इंडिया" and "Central Bank of India"&lt;/img&gt;
+<footer>2023 Alpharithm Technologies</footer>
 
-Pharma
+---
 
-Sanofi – Master Data Hub
-About the client: Largest European-headquartered Pharma company.
-Business Challenges: Duplicate Doctor data across CRM and other systems. Manual deduplication increased operational costs and risk. Regulatory compliance required accurate records.
-Solution: Data extracted, validated, cleansed, deduplicated, and loaded into Doctor Hub. Governance workflows ensured single version of truth.
-Benefits: Circa 3 Million USD over 3 years, 35% duplication removed, Visibility into spend per Doctor, Golden record for each Doctor, Regulatory compliance met, Foundation for Products and Distributor hubs.
-Technology: MDM SE (Standard Edition), Information Server, DB2
 
-Media
+## Page 3
 
-Sony Pictures Networks – Integration Platform
-About the client: One of the largest entertainment companies in India with 10+ TV channels.
-Business Challenges: Multiple media-specific applications with duplicated master data; integration and reporting issues.
-Solution: Scalable Integration Platform using SOA. Master data domains included Customer, Title, Episodes, Deals, General Ledger.
-Benefits: Circa 20 Million USD over 3 years (projected), Revenue uplift for syndication and ad sales teams, Improved governance via automated workflows, Improved marketing effectiveness with single customer view.
-Technology: MDM CE (Collaborative Edition), Information Server, BPM, Integration Bus
+&lt;img&gt;Blue square logo&lt;/img&gt; Insurance - Data Lake ,Analytics & Integration &lt;img&gt;Alpharithm logo&lt;/img&gt;
 
-Government
+**About the client:** Top mid market General Insurance company in India providing Health, Motor, and Commercial Insurance.
 
-State Resident Data Hub (SRDH) – Rajasthan, Odisha, Tamil Nadu
-About the client: Three Indian states, 50–70 million residents each, with multiple benefit schemes.
-Business Challenges: Citizen and benefits data scattered across departments, duplicate claims, revenue leakage, and poor governance.
-Solution: Data extracted from 13 departmental databases, deduped, matched with National Population Registry and Aadhar. Unique citizen records created with family relationships. Suspect records sent for verification.
-Benefits: Circa 580 Million USD over 3 years per state, Identify fraudulent claims, Clean, authenticated data repository, Effective planning of welfare schemes, Frameworks for monitoring schemes, 360-degree resident profiles.
-Technology: MDM SE, Information Server (DataStage and QualityStage), Oracle Exadata, IBM Information Governance Catalog, IBM Information Analyzer
+**Business Challenges:** Siloed applications, no central data repository, hence business users were finding it difficult to generate their day-to-day reports. They had to perform considerable manual work for generating key insurance specific KPI's. Customer data contained duplicate records and had various types of data issues. Additionally, Salesforce was being implemented across all the major functions to provide Customer 360 to Customer Service and for tracking Lead to Customer conversion. This needed not only Unique Identification of Customers but also accurate transactional data. In the absence of a single repository of data none of the organizational requirements could be met.
 
-Retail & Manufacturing
+**Solution:** Data Lake was designed to capture data from across 30+ applications and bring them to the central repository. A combination of IBM CDC for Core Application and IBM Datastage for other applications was implemented. Alpharithm accelerator SiNGL was used to create Unique Customer Repository with adequate data cleansing and normalization. Data from Data Lake was integrated with Salesforce using REST API's and is maintained on T-1 basis. Tableau will be used for Analytical and Dashboard reporting.
 
-Leading Multi-brand Retailer – Analytics & AWS Migration
-About the client: Pan-India retailer and manufacturer in Eyecare, Jewellery, Fashion, and Perfumes.
-Business Challenges: Needed a single vendor for analytics. Existing IBM stack required stabilization and migration to AWS for scalability.
-Solution: Administered IBM Information Server, HortonWorks, IBM Netezza, and managed L2/L3 support. Developed ETL routines, maintained jobs, performed tuning and troubleshooting.
-Benefits:
-- Timely reporting across business lines
-- Improved operational efficiency and automation
-Technology: IBM Information Server, IBM Netezza, HortonWorks, Tableau, AWS Redshift, AWS S3, AWS DynamoDB
+**Benefits:**
+1) **Real-time Visibility:** Near real-time availability of data from various source systems in Data lake
+2) **Improved Customer Service :** Customer Support equipped with up-to-date information to handle customer queries
+3) **Ease of Operational Reporting generation :** Single Repository helping generation of day-to-day Operational reports
+4) **Performance Driven KPI's :** Customer is in the process of implementing business specific KPI based reporting to help measure business health
 
-Netezza Migration – Retail Client
-Benefits:
-- Timely reporting across business lines
-- Improved automation and operational efficiency
-Technology: IBM Netezza
+**Technology:** IBM CDC, IBM DataStage and IBM QualityStage, SiNGL(MDM), IBM Db2 Warehouse, IBM Reference Data Management, Oracle, SQL Server, MySQL
+
+&lt;img&gt;Universal Sompo General Insurance Co. Ltd. logo&lt;/img&gt;
+Suraksha, Hamesha Aapke Saath
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 4
+
+&lt;img&gt;Blue square logo&lt;/img&gt; Microfinance - ODS &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+**About the client:** Ujjivan is a leading Microfinance company in India and have recently been awarded the Small bank license by the Reserve Bank of India.
+
+**Business Challenges:** The client wanted to gain better insights from their customer data. Multiple legacy systems and complex IT infrastructure meant that they were not able to glean timely insights. In addition, the new banking license necessitated appropriate Data Governance frameworks to meet future compliance requirements and to increase the business trust in the underlying data and information systems.
+
+**Solution:** The proposed solution using IBM InfoSphere will connect to various databases, capture changes at source (CDD) and perform complex ETL and populate the Data mart. The Change Data Delivery option reduces the number of records moved/processed on the ETL server and help meet the business defined SLAs. Cognos and SPSS were used for Reporting and Predictive analytics. The Data Dictionary and Data lineage options were recommended to enable the business user to track the journey of data from reports all the way to the source systems, thereby increasing the trust in Analytics.
+
+**Benefits:**
+*   **Achieved business SLAs:** With CDD enabled, parallel data transformation, the ETL processing time was reduced from 16 hours to 4 hours.
+*   **Improved Governance and Trust:** Significantly increased the process and trust that the users had in the IT systems and Data.
+*   **Improved Productivity:** With less data issues to deal with, the business spends more time in analyzing data and gleaning insights
+*   **Future Proof Investment:** Common Meta data layer enables seamless integration with future tools and capabilities such as Data Quality, MDM and Smart Archiving
+*   **Increased up-sell/cross-sell opportunities** – The timely delivery of data into the mart for reporting and the predictive models enables substantial increase in revenue and paves way for future growth
+
+**Technology:** IBM Information Server (IBM Datastage and IBM QualityStage), Information Governance Catalog / Glossary (IGC), IBM Change Data Delivery.
+
+&lt;img&gt;Ujjivan logo&lt;/img&gt;
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 5
+
+&lt;img&gt;Financial Services – Data Lake&lt;/img&gt;
+&lt;img&gt;alpharithm logo&lt;/img&gt;
+
+**About the client:** One of the Leading payment solutions provider in India
+
+**Business Challenges:** Client had undertaken an initiative to implement Cloudera based Data Lake and were facing huge challenges in the acquisition of data from their mainframe applications based on Z/OS as well as from dozens of satellite applications based on Oracle. Z/OS being proprietary in nature did not allow for easy access of data. Client needed a sophisticated solution to extract data in real-time from not only mainframes from also various applications and store them in Cloudera. Client wanted to leverage native Hadoop capabilities for business intelligence reporting as well as for Predictive Analytics
+
+**Solution:** IBM CDC was used to extract changed data from mainframes as well as from Oracle RDBMS, these data were then fed to a Kafka cluster and then posted to Cloudera. IBM BigIntegrate jobs were used to process data on Cloudera to generate relevant output data for Business Intelligence and Analytics. As part of the engagement governance catalog was also configured to track technical assets and provide end-to-end lineage.
+
+**Benefits:**
+1) **Real Time Visibility:** Real-time replication of data from various source systems to Cloudera (Data Lake)
+2) **End-to-End Automation:** Leveraged native Hadoop capabilities through IBM products to process data to perform transformation and speed up processing of terabytes of data
+3) **Streamlined MIS :** Enabled day to day operational reporting
+4) **Enabled Analytics:** Supported downstream Analytics Users for model building with near real-time data
+
+**Technology:** IBM CDC (zOS and Oracle based applications), IBM BigIntegrate for Hadoop (DataStage, QualityStage, Governance Catalog) , Cloudera, Kafka, Oracle
+
+&lt;img&gt;SBI card logo&lt;/img&gt;
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 6
+
+&lt;img&gt;Blue square logo&lt;/img&gt; Banking - Master Data Management & Data Governance &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+**About the client:** ICICI Bank one of largest private Bank in India.
+
+**Business Challenges:** ICICI Bank has the vision to persist and deepen its customer knowledge with the goal to improve customer engagement and experience by having accurate customer data across all the channels. Current customer information was distributed across two applications one for Retail and other for Corporate, hence any customer interlinkages could not be inferred. There were considerable number of duplicate records leading to improper offers across channels. ICICI wanted to implement a comprehensive MDM that will serve as a Single Repository of Customer data and provide consistent data across all the channels.
+
+**Solution:** Data from 70+ applications was integrated with IBM MDM . Data was standardized, cleansed and loaded into the MDM hub using IBM Datastage jobs. Complex validation rules were implemented in the ETL Jobs for cleansing of data. Probabilistic Matching algorithms were configured to identify unique, duplicate and suspect records. Data Stewardship processes were implemented to arrive at proper customer Golden record which as made available to all the consuming applications vis REST API through APIGEE middleware. Watson Knowledge Catalog provides Data Lineage from Source through ETL to Target.
+
+**Benefits:**
+1) **One-Bank One-Id:** Unique Identification of Customer across various line of business, leading to Single Source of Truth across On-boarding and Channels applications
+2) **Improved Customer Experience:** Golden Profile view enabling effective Up-sell/Cross-Sell opportunities
+3) **Centralized Consent Management:** Unambiguous consent capture for a Golden Profile across various LOB's
+4) **Faster identification of new opportunities & risks:** Advanced ‘Householding’ for accurate customer scoring, based on significant customer events.
+
+**Technology:** MDM AE (Advanced Edition) on OpenShift environment. IBM Cloud Pack Cartridge Information Server on OpenShift , IBM Watson Knowledge Catalog, IBM Consent Management, IBM Reference Data Management, APIGEE Middleware, Vertica, Oracle EXADATA, Oracle, SQL Server
+
+&lt;img&gt;ICICI Bank logo&lt;/img&gt;
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 7
+
+&lt;img&gt;Blue square logo&lt;/img&gt; Banking - Master Data Management &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+**About the client:** DHFL is the 3rd largest Mortgage lender in India.
+
+**Business Challenges:** The client had embarked on a Data Migration journey moving from old Legacy systems to modern applications such as ERP and CRM for their Lending and Deposits business. The master and reference data is of very poor data quality. Migration of the data as is into the new applications would result in majority of the records being rejected. A pre-requisite to this migration is cleansing the master data and creating a single view of customer across the enterprise.
+
+&lt;img&gt;DHFL logo with "Changing Rules Changing Lives" tagline&lt;/img&gt;
+
+**Solution:** Data from on-prem was migrated to the MDM Cloud on SoftLayer environment, standardized, cleansed and loaded into the MDM hub. Dedup matching algorithms were written to identify unique, duplicate and suspect records. Finally Unique Enterprise IDs were created for customers and then mapped to the transaction data based on which the data migration to ERP and CRM was completed.
+
+**Benefits:**
+1) **Faster time to value:** The proposed solution on cloud enabled them to create single view of customer within 2 months.
+2) **Reduced overall cost:** Reduced Upfront payment as they could buy initially for 6 months and then extend on a monthly basis as per the project demand
+3) **Improved marketing effectiveness** – With single customer view, the campaign effectiveness and response rates will be improved.
+4) **Increased up-sell/cross-sell opportunities** – With single view across Loans and Deposits, the client could target specific, personalized products to existing customer base
+
+**Technology:** MDM AE (Advanced Edition) on IBM SoftLayer Cloud, IBM Datastage and IBM QualityStage
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 8
+
+&lt;img&gt;Blue square logo&lt;/img&gt; Other Non-Financial Clients in India &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+<table>
+  <tr>
+    <td>&lt;img&gt;SANOFI logo&lt;/img&gt;</td>
+    <td>&lt;img&gt;SONY PICTURES NETWORKS logo&lt;/img&gt;</td>
+    <td>&lt;img&gt;TITAN logo&lt;/img&gt;</td>
+  </tr>
+  <tr>
+    <td>IBM MDM, IBM Datastage and Qualitystage, IBM BPM, SQL Server</td>
+    <td>IBM MDM, IBM Datastage and Qualitystage, IBM IIB</td>
+    <td>IBM Datastage and Qualitystage, IBM Netezza, Hortonworks, AWS Redshift, AWS Dynamodb, AWS API Gateway, IBM Db2, SQL Server</td>
+  </tr>
+  <tr>
+    <td>&lt;img&gt;Government of Tamil Nadu logo&lt;/img&gt;</td>
+    <td>&lt;img&gt;Government of Odisha logo&lt;/img&gt;</td>
+    <td>&lt;img&gt;Government of Rajasthan logo&lt;/img&gt;</td>
+  </tr>
+  <tr>
+    <td>IBM MDM, IBM Datastage and Qualitystage, SQL Server, IBM Db2, Oracle,</td>
+    <td>IBM MDM, IBM Datastage and Qualitystage, SQL Server, IBM Db2</td>
+    <td>IBM MDM, IBM Datastage and Qualitystage, SQL Server, IBM Db2, Oracle</td>
+  </tr>
+</table>
+
+<footer>2023 Alpharithm Technologies</footer>
+
+---
+
+
+## Page 9
+
+&lt;img&gt;Blue square logo&lt;/img&gt; International Clients &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+&lt;img&gt;Barclays logo&lt;/img&gt; &lt;img&gt;M&S logo with EST. 1884&lt;/img&gt; &lt;img&gt;Brakes logo with a green leaf icon and "a Sysco company" text&lt;/img&gt;
+&lt;img&gt;NHS logo&lt;/img&gt; &lt;img&gt;Etisalat logo&lt;/img&gt; &lt;img&gt;Parkway Hospitals Singapore logo&lt;/img&gt;
+
+&lt;img&gt;Blue square logo&lt;/img&gt; **Case Study – Pharma** &lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+**About the client:** One of the Largest European head quartered Pharma companies
+
+**Business Challenges:** The client lacked visibility of consolidated payments made to Doctors. This is because the Doctor data is duplicated across different CRM and Data originating systems. To add to this a Doctor can be associated with multiple hospitals and clinics. In addition the same Doctor is seen by different Sales Reps, each in turn creating new Doctor Id for every thereby duplicating the data. This led to several operational staff engaged in manually validating and de-duplicating the data which increased the cost of operations, increased risk and reduced the efficiency. In addition, they had to comply with the Transparency Act.
+
+**Solution:** Data was extracted from Sanofi’s source systems including CRM and then validated, cleansed, deduplicated, matched and loaded into a Master data hub called the Doctors Hub. This hub would contain the Golden record for each Doctor and their association with Hospitals. Master Data Governance process was established using a Workflow model to prevent data deterioration and ensure that the systems remained duplicate free. The Doctor Hub delivered Single version of truth and enabled accurate information sharing across the enterprise.
+
+**Benefits:** *Circa 3 Million USD over 3 years*
+
+*   **Deduplication of data:** 35% duplication was identified and removed from the existing database
+*   **Spend Analysis:** Visibility into Doctors and associated spend
+*   **Doctor Hub:** Golden record for each Doctor and link between disparate systems
+*   **Compliance:** Met the regulatory requirements
+*   **Information Governance:** Laid foundation to create Products and Distributor hubs in the future
+
+**Technology:** MDM SE (Standard Edition) on Prem, Information Server, DB2
+
+&lt;img&gt;SANOFI logo&lt;/img&gt;
+
+<footer>© 2017 Alpharithm Technologies Pvt Ltd</footer>
+
+---
+
+
+## Page 3
+
+&lt;img&gt;Blue square graphic&lt;/img&gt; **Case Study – Media** &lt;img&gt;alpharithm logo&lt;/img&gt;
+
+**About the client:** Sony Pictures Networks is one of the largest Entertainment company in India with over 10 Satellite TV channels in multiple languages. Sony has grown rapidly both organically and inorganically.
+
+**Business Challenges:** Sony has multiple media specific applications to manage the Customers, Titles, Episodes, Rights management and Broadcasting/Scheduling including SAP for Financial management. As a result master data is created and duplicated in multiple systems. This lead to Process issues, data, integration and reporting issues. Sony is also growing by acquisitions which further added to their data management challenges.
+
+**Solution:** The solution involves creating a Platform that would deliver a Scalable and Distributable Integration Platform using Service Oriented Architecture whereby all applications can seamlessly exchange data/ information using homogeneous master data elements and reusable API’s. Within MDM, multiple master data domains such as Customer, Title, Episodes, Deals, General Ledger etc will be mastered.
+
+**Benefits:** *Circa 20 Million USD over 3 years (projected)*
+
+1) Revenue uplift: The Syndication team and Ad sales team would benefit from the new Integrated platform
+2) Better Governance: Increased TAT Via automated workflows and better process management
+3) Improved marketing effectiveness – With single customer view, the client will improved the campaign effectiveness and response rate
+
+**Technology:** MDM CE (Collaborative Edition) on prem, Information Server, BPM and Integration Bus
+
+&lt;img&gt;Sony Pictures Networks logo&lt;/img&gt;
+
+<footer>© 2017 Alpharithm Technologies Pvt Ltd</footer>
+
+---
+
+
+## Page 4
+
+&lt;img&gt;Blue square logo&lt;/img&gt; **Case Study – NBFC** &lt;img&gt;alpharithm logo&lt;/img&gt;
+
+**About the client:** DHFL is the 3rd largest Mortgage lender in India.
+
+**Business Challenges:** The client had embarked on a Data Migration journey moving from old Legacy systems to modern applications such as ERP and CRM for their Lending and Deposits business. The master and reference data is of very poor data quality. Migration of the data as is into the new applications would result in majority of the records being rejected. A pre-requisite to this migration is cleansing the master data and creating a single view of customer across the enterprise.
+
+&lt;img&gt;DHFL logo with "Changing Rules Changing Lives" tagline&lt;/img&gt;
+
+**Solution:** Data from on-prem was migrated to the MDM Cloud on SoftLayer environment, standardized, cleansed and loaded into the MDM hub. Dudupe matching algorithms were written to identify unique, duplicate and suspect records. Finally Unique Enterprise IDs were created for customers and then mapped to the transaction data based on which the data migration to ERP and CRM was completed.
+
+**Benefits:** *Circa 8 Million USD over 3 years (projected)*
+
+1) **Faster time to value:** The proposed solution on cloud enabled them to create single view of customer within 2 months.
+2) **Reduced overall cost:** Without the Cloud option the client would have purchased the Perpetual licenses for at least 1 year. The cloud option meant that they could buy initially for 6 months and then extend on a monthly basis as per the project demand
+3) **Improved marketing effectiveness** – With single customer view, the client will improved the campaign effectiveness and response rate
+4) **Increased up-sell/cross-sell opportunities** – With single view across Loans and Deposits, the client could target specific, personalized products to existing customer base
+
+**Technology:** MDM AE (Advanced Edition) on IBM SoftLayer Cloud
+
+<footer>© 2017 Alpharithm Technologies Pvt Ltd</footer>
+
+---
+
+
+## Page 5
+
+<header>Case Studies – Government</header>
+
+&lt;img&gt;Alpharithm logo&lt;/img&gt;
+
+**About the client:** These 3 clients represent three different states within India. Each State has several benefit schemes and service appx. 50 to 70 Million residents.
+
+**Business Challenges:** Citizen demographic data and Benefits data was scattered across multiple departmental databases. Each database contained duplicate Citizen information leading to the same Citizen claiming benefits multiple times in a month resulting in Revenue leakage and poor Governance. The State department decided to embark on a Centralized Data Hub called SRDH to overcome these challenges and improve the benefits distribution process.
+
+**Solution:** The solution for SRDH (State Resident Data Hub) involved extracting data from 13 departmental databases and deduping, matching and linking with the National Population Registry data and National ID (Aadhar) database. A unique record for each Citizen was created and relationships between family members were identified. The suspect records were sent back to governance team for field verification and further action.
+
+**Benefits:** Circa 580 Million USD over 3 years (projected - for each State Department)
+
+- State and National government bodies can now identify fraudulent benefits applications and claims, to minimize wasteful spending  
+- Established a Clean, Authenticated and deduplication data repository for all the Residents of the State  
+- Support State Government Departments in effective planning of welfare and development Schemes  
+- Established the frameworks for effective monitoring of schemes  
+- Enabled the transformation of service delivery through integrated service delivery Creation of a 360 degree profile of a resident  
+
+**Technology:** MDM Standard Edition (SE) on prem, Information Server (DataStage and QualitySatge), Oracle Exadata, IBM Information Governance Catalog, IBM Information Analyzer
+
+&lt;img&gt;Government of Rajasthan logo&lt;/img&gt;
+Government of Rajasthan
+
+&lt;img&gt;Government of Odisha logo&lt;/img&gt;
+Government of Odisha
+
+&lt;img&gt;Government of Tamil Nadu logo&lt;/img&gt;
+Government of Tamil Nadu
+
+# Case Studies – Leading Multi-brand Retailer and Manufacturer
+
+**About the client:** Leading Retailer and Manufacturer in India known for leading brands in the area of Eyecare, Jewellery, Fashion Clothing, and Perfumes. Client has Pan India presence and leverage Analytics for their critical decision making.
+
+**Business Challenges:** Client wanted a Single Vendor to manage all of their Analytical needs. They have complete IBM Analytics stack for core of their Data Management and Data Integration needs. They needed agility in delivering as per business needs as their business was growing exponentially. They also wanted to migrate to AWS stack for scalability.
+
+**Solution:** We provided them a team of qualified resources who acted as an extended arm of the IT department and took over from the existing Vendor and helped stabilize the existing deployment. We managed the Administration of the following components:
+
+1.  **IBM Information Server (On-prem and AWS Cloud):**
+    *   a) Patching
+    *   b) Monitoring
+    *   c) Performance Improvement
+    *   d) Housekeeping
+    *   e) Helping in Backup and Recovery Process
+2.  **HortonWorks:**
+    *   a) Day to Day administration
+    *   b) User Management
+    *   3) Hbase Maintenance
+    *   4) Hadoop Services maintenance
+3.  **IBM Netezza :**
+    *   a) Managing User Creation and access
+    *   b) Creation of New Tables / Modification of Tables
+    *   c) View Creation
+    *   d) Performance Tuning of Queries and ensuring proper table design as per NZ best practices
+    *   e) Regular Housekeeping
+    *   f) Migrating data to AWS
+
+**L2 and L3 Support**
+
+*   Execution of BAU Jobs
+*   Establish and Implement comprehensive framework for Exception handling and dealing with AWS Redshift Data Upload)
+*   Fine Tuning of jobs to run within their stipulated times
+*   Catering to new needs for ETL development across various lines of businesses for reporting purposes (designing new tables, Writing ETL routines to populate data)
+*   Troubleshooting and fixing issues, coordinating with IBM for PMR’s raised
+
+**Benefits:**
+
+1)  **Timely Reporting:** Improved reporting across Lines of Businesses helping meet Reporting SLA’s
+2)  **Operational Efficiency:** Improved automation of jobs, reduced manual intervention, optimum utilization of IT resources
+
+**Technology:** IBM Information Server, IBM Netezza, HortonWorks, Tableau, AWS Redshift, AWS S3, AWS Dynamodb
+
+
 """
 
 # --- PROMPT ENGINEERING ---
