@@ -158,7 +158,7 @@ if not GOOGLE_API_KEY:
 # Configure the Generative AI client
 try:
     genai.configure(api_key=GOOGLE_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.5-flash-lite')
 except Exception as e:
     st.error(f"Error configuring Google API: {e}")
     st.stop()
