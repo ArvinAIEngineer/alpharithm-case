@@ -349,6 +349,106 @@ Government of Tamil Nadu
 
 **Technology:** IBM Information Server, IBM Netezza, HortonWorks, Tableau, AWS Redshift, AWS S3, AWS Dynamodb
 
+Project: Enterprise Data Transformation – Centralized MDM and X360 Data Lake for Universal Sompo General Insurance (USGI)
+About the Client:
+Universal Sompo General Insurance (USGI) is a significant and unique player in the Indian insurance landscape, established as the nation's first public-private partnership in the general insurance industry. Its foundation is a strategic consortium of major financial institutions, including two nationalized banks (Allahabad Bank, Indian Overseas Bank), a private sector bank (Karnataka Bank Ltd), a major FMCG entity (Dabur Investment Corp), and a global insurance leader from Japan (Sompo Japan Nipponkoa Insurance Inc). This diverse parentage gives USGI a vast distribution network and a complex operational footprint, necessitating a highly robust and unified approach to data management to serve its diverse customer base effectively.
+
+Business Challenges & Strategic Imperatives:
+USGI is at a pivotal point in its growth, aiming to execute a fundamental shift from a product-focused to a customer-centric business model. However, this strategic vision is severely hampered by a deeply fragmented and complex data ecosystem.
+
+Profound Data Fragmentation: Critical business data is siloed across an extensive and heterogeneous landscape of approximately 30 distinct applications. These include core insurance platforms like Genisys, specialized portals for agents and customers (Agency Portal, CSC Portal), various integration points (Banca Portal, Maruti Integration), and numerous other legacy and modern systems. This fragmentation makes it impossible to form a coherent, enterprise-wide view of any business entity.
+Absence of a "Golden Record": The primary consequence of data fragmentation is the inability to create a single, authoritative, and trustworthy record—a "Golden Record"—for each customer, agent, or broker. The same customer may exist with different identifiers and inconsistent details across multiple systems, leading to operational inefficiencies, poor customer experience, and inaccurate reporting.
+Inability to Execute a 360-Degree Customer Strategy: The core objective of integrating a complete customer view into their primary engagement platform, Salesforce, is currently unachievable. Without a 360-degree view encompassing every policy, claim, interaction, and relationship, the sales and service teams are operating with incomplete information, limiting their ability to personalize service, anticipate needs, and identify cross-sell or up-sell opportunities.
+Impediments to Data-Driven Decision-Making: The leadership's goal to implement and monitor Key Performance Indicators (KPIs) for vital functions—such as Claims Processing, Corporate Planning, Finance, and Underwriting—is stymied by the lack of reliable, consolidated data. The effort required to manually aggregate and reconcile data for reporting is immense, and the resulting analytics lack the trust required to drive strategic decisions.
+Lack of Formalized Data Governance: There is an absence of a formal, centralized data governance framework. This results in inconsistent data definitions, a lack of clear data ownership, and uncontrolled data quality issues (e.g., invalid characters, inconsistent reference codes like 'M' vs. '01' for gender, missing critical fields), which perpetuates the cycle of poor data.
+The Envisioned Solution: A Three-Track Enterprise Data Foundation Initiative
+Alpharithm proposes a multi-faceted, phased solution to systematically dismantle these data silos and construct a robust, centralized data foundation. The project is meticulously structured into three interconnected tracks, each building upon the last to deliver a comprehensive transformation.
+
+Track A: Forging the Single Source of Truth – The Centralised Master Data Repository (MDM)
+This foundational track is focused on creating the definitive "Golden Record" for USGI's core business entities: Customers, Agents, and Brokers.
+
+Comprehensive Data Ingestion and Profiling: The process begins by connecting to all ~30 source applications via ETL (using IBM DataStage) to extract all instances of master data. This raw data is then subjected to rigorous profiling using IBM InfoSphere Information Analyzer to discover its structure, quality, and inherent inconsistencies.
+Advanced Data Cleansing and Standardization: Using IBM InfoSphere QualityStage, the extracted data undergoes a multi-step cleansing process. This includes standardizing addresses, parsing names, correcting data types, and resolving formatting issues to prepare the data for matching.
+Sophisticated Matching and Survivorship: The core of the MDM process involves applying a combination of deterministic (rule-based) and probabilistic (fuzzy logic) matching algorithms. These algorithms are fine-tuned to accurately identify duplicate and related records across the entire application landscape. Survivorship rules are then configured to intelligently merge the "best" attributes from multiple source records into a single, consolidated Golden Record.
+Creation of the Universal Identifier (UCIC): Each resulting Golden Record is assigned a new, persistent Unique Customer Identification Code (UCIC). This UCIC will become the master key for that entity across the entire USGI enterprise, providing a definitive way to link all related data.
+Centralizing Reference Data (RDM): In parallel, IBM Reference Data Management (RDM) will be implemented to consolidate and govern reference data sets (e.g., product codes, state lists, vehicle models). This ensures that all applications use a standardized set of codes, eliminating a major source of data inconsistency.
+Empowering Data Stewards: The solution includes the deployment of Alpharithm's SINGL accelerator, a user-friendly interface designed to streamline data stewardship activities. This will empower USGI's newly established team of Data Stewards to review match results, resolve suspect records, and manage the ongoing governance of the master data.
+Track B: Building the Contextual Hub – The Enterprise Data Lake (X360)
+With the master data foundation established, this track focuses on consolidating all related transactional data to build rich, contextual, 360-degree views.
+
+Transactional Data Aggregation: ETL processes will extract a wide array of transactional data—including Policies, Claims, Beneficiaries, Transactions, and Commission details—from all relevant source systems. This includes a one-time load of 8 years of historical data to provide deep historical context.
+Linking and Co-relation: The ingested transactional data is persisted in the X360 Data Lake, built on a scalable IBM Db2 database. The crucial step here is linking every transactional record to its corresponding master record from the MDM Hub using the UCIC. This co-relation is what transforms raw data into a meaningful, interconnected web of information.
+Constructing 360-Degree Views: The linked data is then structured into pre-defined, business-centric analytical views. These views, such as Customer360, Agent360, Broker360, and Policies360, aggregate all relevant information for a given entity, providing an at-a-glance, comprehensive profile.
+Track C: Operationalizing Intelligence – X360 and Salesforce Integration
+This final track focuses on delivering the value created in the first two tracks directly into the hands of the end-users by deeply integrating the X360 Data Lake with Salesforce.
+
+Seamless Data Publication to Salesforce: A dedicated, continuous ETL process is engineered to read the curated 360-degree views from the X360 database.
+Data Model Mapping and Transformation: This data is then transformed and meticulously mapped to the specific objects and data models within USGI's Salesforce instance, ensuring that information like "Contact360" and "Policies360" is presented natively within the CRM interface.
+Empowering the Front Line: By continuously feeding this rich, reliable, and holistic data into Salesforce, the solution empowers sales and service teams with unprecedented insight. They will be able to view a customer's entire policy history, claim status, and relationships directly within the CRM, enabling a new level of proactive and personalized engagement.
+Anticipated Business Transformation & Benefits:
+
+Achieving True Customer-Centricity: The project will directly enable USGI's core strategic goal by embedding a complete, trusted 360-degree view of the customer into the primary system of engagement, Salesforce. This will transform customer interactions from transactional to relational.
+Radical Improvement in Operational Efficiency: Automating the consolidation and cleansing of data from 30 systems will eliminate countless hours of manual reconciliation, reduce data-related errors in downstream processes, and provide a single, reliable source for all business operations.
+Unlocking High-Value Analytics and Insights: The centralized and cleansed data in the X360 lake will become the trusted source for all business intelligence and analytics. This will enable the accurate tracking of KPIs, the development of predictive models, and the uncovering of new business insights.
+Significant Enhancement of Cross-Sell/Up-Sell Revenue: With a complete view of each customer's portfolio and history, sales teams can intelligently identify gaps and propose relevant new products, driving significant revenue growth.
+Establishment of a Lasting Data Governance Culture: Beyond the technology, the project establishes the processes and roles (i.e., Data Stewards) necessary for a sustainable data governance framework, ensuring that data remains a trusted, high-quality asset for years to come.
+Technology Stack:
+
+Data Integration & ETL: IBM InfoSphere DataStage
+Data Quality, Cleansing & Matching: IBM InfoSphere QualityStage & IBM InfoSphere Information Analyzer
+Master Data & Stewardship: IBM MDM framework complemented by Alpharithm's SINGL Accelerator
+Reference Data Governance: IBM Reference Data Management (RDM)
+Database & Data Lake Platform: IBM Db2
+Primary Consuming Application (CRM): Salesforce
+
+Annexure 1: Case Studies
+31.1 Case Study #1: NBFC (MDM)
+
+About the client: DHFL is the 3rd largest Mortgage lender in India.
+Business Challenges: The client had embarked on a Data Migration journey moving from old Legacy systems to modern applications such as ERP and CRM for their Lending and Deposits business. The master and reference data is of very poor data quality. Migration of the data as is into the new applications would result in a majority of the records being rejected. A pre-requisite to this migration is cleansing the master data and creating a single view of the customer across the enterprise.
+Solution: Data from on-prem was migrated to the MDM Cloud on the SoftLayer environment, standardized, cleansed, and loaded into the MDM hub. Dedupe matching algorithms were written to identify unique, duplicate, and suspect records. Finally, Unique Enterprise IDs were created for customers and then mapped to the transaction data based on which the data migration to ERP and CRM was completed.
+Benefits: Circa 8 Million USD over 3 years (projected).
+Faster time to value: The proposed solution on the cloud enabled them to create a single view of the customer within 2 months.
+Reduced overall cost: Without the Cloud option, the client would have purchased Perpetual licenses for at least 1 year. The cloud option meant that they could buy initially for 6 months and then extend on a monthly basis as per the project demand.
+Improved marketing effectiveness: With a single customer view, the client will improve campaign effectiveness and response rate.
+Increased up-sell/cross-sell opportunities: With a single view across Loans and Deposits, the client could target specific, personalized products to the existing customer base.
+Technology: MDM AE (Advanced Edition) on IBM SoftLayer Cloud.
+31.2 Case Study #2: State Government (MDM)
+
+About the client: These 3 clients represent three different states within India (Rajasthan, Odisha, Tamil Nadu). Each State has several benefit schemes and serves approx. 50 to 70 Million residents.
+Business Challenges: Citizen demographic data and Benefits data were scattered across multiple departmental databases. Each database contained duplicate Citizen information, leading to the same Citizen claiming benefits multiple times in a month, resulting in Revenue leakage and poor Governance. The State department decided to embark on a Centralized Data Hub called SRDH to overcome these challenges and improve the benefits distribution process.
+Solution: The solution for SRDH (State Resident Data Hub) involved extracting data from 13 departmental databases and deduping, matching, and linking with the National Population Registry data and National ID (Aadhar) database. A unique record for each Citizen was created, and relationships between family members were identified. The suspect records were sent back to the governance team for field verification and further action.
+Benefits: Circa 580 Million USD over 3 years (projected - for each State Department).
+State and National government bodies can now identify fraudulent benefits applications and claims, to minimize wasteful spending.
+Established a Clean, Authenticated, and deduplication data repository for all the Residents of the State.
+Support State Government Departments in the effective planning of welfare and development Schemes.
+Established the frameworks for the effective monitoring of schemes.
+Enabled the transformation of service delivery through integrated service delivery and the Creation of a 360-degree profile of a resident.
+Technology: MDM Standard Edition (SE) on-prem, Information Server, Oracle Exadata.
+31.3 Case Study #3: Data Lake for Cards Company
+
+About the client: One of the Leading payment solutions providers in India (SBI Card).
+Business Challenges: The client had undertaken an initiative to implement a Cloudera-based Data Lake and were facing huge challenges in the acquisition of data from their mainframe applications based on Z/OS as well as from dozens of satellite applications based on Oracle. Z/OS being proprietary in nature did not allow for easy access to data. The client needed a sophisticated solution to extract data in real-time from not only mainframes but also from various applications and store them in Cloudera. The client wanted to leverage native Hadoop capabilities for business intelligence reporting as well as for Predictive Analytics.
+Solution: IBM CDC was used to extract changed data from mainframes as well as from Oracle RDBMS; these data were then fed to a Kafka cluster and then posted to Cloudera. IBM BigIntegrate jobs were used to process data on Cloudera to generate relevant output data for Business Intelligence and Analytics. As part of the engagement, a governance catalog was also configured to track technical assets and provide end-to-end lineage.
+Benefits:
+Real Time Visibility: Real-time replication of data from various source systems to Cloudera (Data Lake).
+End-to-End Automation: Leveraged native Hadoop capabilities through IBM products to process data to perform transformation and speed up the processing of terabytes of data.
+Streamlined MIS: Enabled day-to-day operational reporting.
+Enabled Analytics: Supported downstream Analytics Users for model building with near real-time data.
+Technology: IBM CDC, IBM BigIntegrate (DataStage, QualityStage, Governance Catalog).
+31.4 Case Study #4: Microfinance Company (ODS)
+
+About the client: Ujjivan is a leading Microfinance company in India and has recently been awarded the Small bank license by the Reserve Bank of India.
+Business Challenges: The client wanted to gain better insights from their customer data. Multiple legacy systems and complex IT infrastructure meant that they were not able to glean timely insights. In addition, the new banking license necessitated appropriate Data Governance frameworks to meet future compliance requirements and to increase the business trust in the underlying data and information systems.
+Solution: The proposed solution using IBM InfoSphere will connect to various databases, capture changes at the source (CDD), perform complex ETL, and populate the Data mart. The Change Data Delivery option reduces the number of records moved/processed on the ETL server and helps meet the business-defined SLAs. Cognos and SPSS were used for Reporting and Predictive analytics. The Data Dictionary and Data lineage options were recommended to enable the business user to track the journey of data from reports all the way to the source systems, thereby increasing the trust in Analytics.
+Benefits:
+Achieved business SLAs: With CDD enabled and parallel data transformation, the ETL processing time was reduced from 16 hours to 4 hours.
+Improved Governance and Trust: Significantly increased the process and trust that the users had in the IT systems and Data.
+Improved Productivity: With less data issues to deal with, the business spends more time in analyzing data and gleaning insights.
+Future Proof Investment: A common Meta data layer enables seamless integration with future tools and capabilities such as Data Quality, MDM, and Smart Archiving.
+Increased up-sell/cross-sell opportunities: The timely delivery of data into the mart for reporting and the predictive models enables a substantial increase in revenue and paves the way for future growth.
+Technology: IBM Information Server, Change Data Delivery, Information Governance Catalog / Glossary (IGC), Cognos.
+
 
 """
 
